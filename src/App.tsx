@@ -1,11 +1,8 @@
 import styled from 'styled-components';
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Switch,
-} from 'react-router-dom';
+import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { LoginPage } from './pages/Login';
+import { CharactersPage } from './pages/Characters';
+import { Header } from './components/Header';
 
 interface BackgroundProps {
   imageUrl: string;
@@ -67,25 +64,40 @@ const Background = (props: { children: React.ReactNode }) => {
         imageUrl={process.env.PUBLIC_URL + '/images/background-image.jpg'}
       />
 
-      <div style={{ position: 'absolute' }}>{props.children}</div>
+      <div
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {props.children}
+      </div>
     </div>
   );
 };
 
 function App() {
+  const location = useLocation();
   return (
     <MainContainer>
+      {location.pathname !== '/login' && <Header />}
       <Background>
-        <Router>
-          <Switch>
-            <Route path="/login">
-              <LoginPage />
-            </Route>
-            <Route path="/">
-              <Redirect to="/login" />
-            </Route>
-          </Switch>
-        </Router>
+        <Switch>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+          <Route path="/personagens">
+            <CharactersPage />
+          </Route>
+          <Route path="/">
+            <Redirect to="/login" />
+          </Route>
+        </Switch>
       </Background>
     </MainContainer>
   );

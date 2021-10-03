@@ -18,3 +18,9 @@
   font-weight: normal;
   src: local('Axiforma'), url(fonts/AxiformaMedium.otf) format('opentype');
 }
+
+@font-face {
+  font-family: 'Axiforma';
+  font-weight: thin;
+  src: local('Axiforma'), url(fonts/AxiformaThin.otf) format('opentype');
+}
