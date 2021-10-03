@@ -14,8 +14,9 @@ export const CardContainer = styled.div<CardContainerProps>`
   color: white;
   background-color: red;
   border-radius: 20px;
-  height: 439px;
-  width: 250px;
+  height: 28rem;
+  width: 18rem;
+  text-align: center;
 `;
 
 export const CardInformationContainer = styled.div`
@@ -26,7 +27,7 @@ export const CardInformationContainer = styled.div`
   background: linear-gradient(
     to bottom,
     rgba(255, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 100%
+    rgb(128, 0, 0, 0.66) 100%
   );
   font-family: 'Axiforma';
   display: flex;
@@ -36,18 +37,20 @@ export const CardInformationContainer = styled.div`
   padding: 1rem;
 `;
 
-export const CardTitle = styled.h1`
+export const CardTitle = styled.span`
   font-size: 1.25rem;
   font-weight: bold;
+  line-height: 1;
   margin: 0;
-  padding: 0;
+  padding: 0.5rem 0;
 `;
 
 export const CardDescription = styled.span`
   font-size: 0.75rem;
   font-weight: 100;
+  text-align: left;
   margin: 0;
-  padding: 0;
+  padding: 0 0.5rem;
 `;
 
 export const CardButton = styled.button`
