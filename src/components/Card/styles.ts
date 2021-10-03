@@ -9,6 +9,7 @@ export const CardContainer = styled.div<CardContainerProps>`
   background-image: ${(props) =>
     props.imageUrl ? `url(${props.imageUrl})` : 'none'};
   background-size: cover;
+  background-position: top center;
   flex-direction: column;
   color: white;
   background-color: red;

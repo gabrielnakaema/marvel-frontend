@@ -3,6 +3,7 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { LoginPage } from './pages/Login';
 import { CharactersPage } from './pages/Characters';
 import { Header } from './components/Header';
+import { MoviesPage } from './pages/Movies';
 
 interface BackgroundProps {
   imageUrl: string;
@@ -93,6 +94,9 @@ function App() {
           </Route>
           <Route path="/personagens">
             <CharactersPage />
+          </Route>
+          <Route path="/filmes">
+            <MoviesPage />
           </Route>
           <Route path="/">
             <Redirect to="/login" />
