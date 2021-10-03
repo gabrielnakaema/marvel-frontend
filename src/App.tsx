@@ -4,6 +4,7 @@ import { LoginPage } from './pages/Login';
 import { CharactersPage } from './pages/Characters';
 import { Header } from './components/Header';
 import { MoviesPage } from './pages/Movies';
+import { ComicsPage } from './pages/Comics';
 
 interface BackgroundProps {
   imageUrl: string;
@@ -97,6 +98,9 @@ function App() {
           </Route>
           <Route path="/filmes">
             <MoviesPage />
+          </Route>
+          <Route path="/hqs">
+            <ComicsPage />
           </Route>
           <Route path="/">
             <Redirect to="/login" />

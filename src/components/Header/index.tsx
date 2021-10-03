@@ -17,7 +17,7 @@ export const Header = () => {
       <NavBar>
         <NavBarLink to="/personagens">Personagens</NavBarLink>
         <NavBarLink to="/filmes">Filmes</NavBarLink>
-        <NavBarLink to="hqs">HQs</NavBarLink>
+        <NavBarLink to="/hqs">HQs</NavBarLink>
         <User />
       </NavBar>
     </HeaderContainer>
