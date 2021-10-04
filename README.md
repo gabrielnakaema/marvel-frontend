@@ -1,10 +1,16 @@
-# Frontend Lista Marvel
+# Frontend Marvel
 
 ## Sobre este projeto
 
-Este projeto é uma aplicação frontend para a exibição de dados sobre filmes, personagens e HQs da Marvel.
+Este projeto é uma aplicação frontend para a exibição de dados sobre filmes, personagens e HQs da Marvel. Ele foi desenvolvido para o desafio de frontend Jr do Mestres da Web
 
-### Tecnologias utilizadas
+A aplicação pode ser encontrada no seguinte link :
+
+https://marvel-frontend-seven.vercel.app/
+
+A aplicação ainda utiliza dados de um arquivo local para a exibição, mas da forma que foi desenvolvida, pode ser facilmente integrada com uma API alterando o arquivo na pasta service para buscar dados externos, mapeando os dados recebidos para obedecer os tipos definidos na pasta types.
+
+### Pacotes e bibliotecas utilizadas
 
 - Create React App
 - React 17
@@ -12,6 +18,7 @@ Este projeto é uma aplicação frontend para a exibição de dados sobre filmes
 - Styled Components
 - React Router
 - React Redux
+- Swiper para componente de listagem horizontal
 
 ### Como rodar essa aplicação em sua máquina
 
