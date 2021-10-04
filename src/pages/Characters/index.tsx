@@ -1,7 +1,21 @@
+import { useEffect } from 'react';
 import { Card } from '../../components/Card';
-import { characters } from '../../data/characters';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { useAppSelector } from '../../hooks/useAppSelector';
+import { getCharacters } from '../../services';
 
 export const CharactersPage = () => {
+  const dispatch = useAppDispatch();
+  const characters = useAppSelector((state) => state.characters);
+
+  useEffect(() => {
+    async function fetchCharacters() {
+      const response = await getCharacters();
+      dispatch({ type: 'characters/setCharacters', payload: response });
+    }
+    fetchCharacters();
+  }, [dispatch]);
+
   return (
     <div
       style={{
