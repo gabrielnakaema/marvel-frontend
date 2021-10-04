@@ -31,7 +31,7 @@ export const CharacterDetailsName = styled.h2`
   color: white;
   font-family: 'Axiforma';
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 1rem 0;
 `;
 

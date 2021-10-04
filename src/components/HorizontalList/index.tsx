@@ -14,7 +14,6 @@ export const HorizontalList = (props: HorizontalListProps) => {
         slidesPerGroup={1}
         spaceBetween={10}
         loop={true}
-        scrollbar={{}}
         navigation={{ nextEl: '.next-nav-button' }}
         loopFillGroupWithBlank={true}
         breakpoints={{

@@ -25,3 +25,25 @@ export const ComicsPageContainer = styled.div`
     width: 95%;
   }
 `;
+
+export const ComicsDetailsTitle = styled.h2`
+  color: white;
+  font-family: 'Axiforma';
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 1rem 0;
+`;
+
+export const Subtitle = styled.h3`
+  font-family: 'Axiforma';
+  font-weight: bold;
+  color: white;
+  margin: 1rem 0;
+`;
+
+export const ComicsDetailsDescription = styled.div`
+  font-family: 'Axiforma';
+  font-weight: 100;
+  color: white;
+  margin: 1rem 0;
+`;

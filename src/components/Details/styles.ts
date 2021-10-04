@@ -33,7 +33,8 @@ export const RedBackground = styled.div`
 
 export const InformationContainer = styled.div`
   position: relative;
-  width: 60%;
+  width: 50%;
+  max-width: 50%;
   margin: 2rem;
 `;
 
