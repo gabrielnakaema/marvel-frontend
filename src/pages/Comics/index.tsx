@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { Card } from '../../components/Card';
+import { HorizontalList } from '../../components/HorizontalList';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { getComics } from '../../services';
+import { ComicsPageContainer } from './styles';
 
 export const ComicsPage = () => {
   const dispatch = useAppDispatch();
@@ -16,25 +18,20 @@ export const ComicsPage = () => {
     fetchComics();
   }, [dispatch]);
 
+  const comicsElement =
+    comics &&
+    comics.map((comic) => (
+      <Card
+        key={comic.id}
+        title={comic.title}
+        description={comic.description}
+        imageUrl={comic.imageUrl}
+      />
+    ));
+
   return (
-    <div
-      style={{
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: '5rem',
-        overflowX: 'auto',
-      }}
-    >
-      {comics.map((comic) => (
-        <Card
-          key={comic.id}
-          title={comic.title}
-          description={comic.description}
-          imageUrl={comic.imageUrl}
-        />
-      ))}
-    </div>
+    <ComicsPageContainer>
+      <HorizontalList listItems={comicsElement} />
+    </ComicsPageContainer>
   );
 };

@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { Card } from '../../components/Card';
+import { HorizontalList } from '../../components/HorizontalList';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { getMovies } from '../../services';
+import { MoviesPageContainer } from './styles';
 
 export const MoviesPage = () => {
   const dispatch = useAppDispatch();
@@ -16,25 +18,20 @@ export const MoviesPage = () => {
     fetchMovies();
   }, [dispatch]);
 
+  const moviesElements =
+    movies &&
+    movies.map((movie) => (
+      <Card
+        key={movie.id}
+        title={movie.title}
+        description={movie.description}
+        imageUrl={movie.imageUrl}
+      />
+    ));
+
   return (
-    <div
-      style={{
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: '5rem',
-        overflowX: 'auto',
-      }}
-    >
-      {movies.map((movie) => (
-        <Card
-          key={movie.id}
-          title={movie.title}
-          description={movie.description}
-          imageUrl={movie.imageUrl}
-        />
-      ))}
-    </div>
+    <MoviesPageContainer>
+      <HorizontalList listItems={moviesElements} />
+    </MoviesPageContainer>
   );
 };

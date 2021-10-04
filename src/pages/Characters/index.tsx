@@ -18,14 +18,16 @@ export const CharactersPage = () => {
     fetchCharacters();
   }, [dispatch]);
 
-  const characterCards = characters.map((character) => (
-    <Card
-      key={character.id}
-      title={character.name}
-      description={character.description}
-      imageUrl={character.imageUrl}
-    />
-  ));
+  const characterCards =
+    characters &&
+    characters.map((character) => (
+      <Card
+        key={character.id}
+        title={character.name}
+        description={character.description}
+        imageUrl={character.imageUrl}
+      />
+    ));
 
   return (
     <CharacterPageContainer>

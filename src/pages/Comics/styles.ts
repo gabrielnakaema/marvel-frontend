@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-export const MoviesPageContainer = styled.div`
+export const ComicsPageContainer = styled.div`
   margin: auto;
   height: 100%;
   overflow-x: hidden;
@@ -17,7 +17,7 @@ export const MoviesPageContainer = styled.div`
     background: linear-gradient(
       to right,
       #000 0%,
-      rgb(33, 33, 33, 0.74) 80%,
+      rgb(33, 33, 33, 0.74) 80coi%,
       rgb(0, 0, 0, 0) 100%
     );
   }
