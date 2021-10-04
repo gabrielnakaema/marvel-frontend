@@ -7,8 +7,14 @@ import {
   UserContainer,
   UserImage,
 } from './styles';
+import { User } from '../../types';
 
-export const Header = () => {
+interface HeaderProps {
+  user: User;
+  logout: () => void;
+}
+
+export const Header = (props: HeaderProps) => {
   return (
     <HeaderContainer>
       <div>
@@ -18,17 +24,17 @@ export const Header = () => {
         <NavBarLink to="/personagens">Personagens</NavBarLink>
         <NavBarLink to="/filmes">Filmes</NavBarLink>
         <NavBarLink to="/hqs">HQs</NavBarLink>
-        <User />
+        <UserAvatar userImageUrl={props.user.imageUrl} logout={props.logout} />
       </NavBar>
     </HeaderContainer>
   );
 };
 
-const User = () => {
+const UserAvatar = (props: { userImageUrl: string; logout: () => void }) => {
   return (
     <UserContainer>
-      <UserImage src={process.env.PUBLIC_URL + '/images/imagem-perfil.jpg'} />
-      <LogoutButton>Sair</LogoutButton>
+      <UserImage src={props.userImageUrl} />
+      <LogoutButton onClick={props.logout}>Sair</LogoutButton>
     </UserContainer>
   );
 };

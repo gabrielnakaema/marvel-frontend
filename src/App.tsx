@@ -5,6 +5,10 @@ import { CharactersPage } from './pages/Characters';
 import { Header } from './components/Header';
 import { MoviesPage } from './pages/Movies';
 import { ComicsPage } from './pages/Comics';
+import { useAppSelector } from './hooks/useAppSelector';
+import { ProtectedRoute } from './components/ProtectedRoute';
+import { logout } from './services';
+import { useAppDispatch } from './hooks/useAppDispatch';
 
 interface BackgroundProps {
   imageUrl: string;
@@ -85,25 +89,38 @@ const Background = (props: { children: React.ReactNode }) => {
 
 function App() {
   const location = useLocation();
+  const user = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
+
+  const handleLogout = () => {
+    logout();
+    dispatch({ type: 'user/removeUser' });
+  };
   return (
     <MainContainer>
-      {location.pathname !== '/login' && <Header />}
+      {location.pathname !== '/login' && user !== null && (
+        <Header user={user} logout={handleLogout} />
+      )}
       <Background>
         <Switch>
           <Route path="/login">
-            <LoginPage />
+            {user !== null ? <Redirect to="/" /> : <LoginPage />}
           </Route>
-          <Route path="/personagens">
+          <ProtectedRoute path="/personagens">
             <CharactersPage />
-          </Route>
-          <Route path="/filmes">
+          </ProtectedRoute>
+          <ProtectedRoute path="/filmes">
             <MoviesPage />
-          </Route>
-          <Route path="/hqs">
+          </ProtectedRoute>
+          <ProtectedRoute path="/hqs">
             <ComicsPage />
-          </Route>
+          </ProtectedRoute>
           <Route path="/">
-            <Redirect to="/login" />
+            {user !== null ? (
+              <Redirect to="/personagens" />
+            ) : (
+              <Redirect to="/login" />
+            )}
           </Route>
         </Switch>
       </Background>

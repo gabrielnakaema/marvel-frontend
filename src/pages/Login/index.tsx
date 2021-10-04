@@ -1,7 +1,17 @@
+import { login } from '../../services';
 import { MarvelLogo } from '../../components/MarvelLogo';
 import { LoginPageContainer, InputTextField, Button } from './styles';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
 
 export const LoginPage = () => {
+  const dispatch = useAppDispatch();
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const response = await login();
+    dispatch({ type: 'user/setUser', payload: response });
+  };
+
   return (
     <LoginPageContainer>
       <div>
@@ -10,7 +20,10 @@ export const LoginPage = () => {
       <h1>Bem vindo(a)de volta</h1>
       <h2>Acesse sua conta:</h2>
 
-      <form style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <form
+        style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
+        onSubmit={handleSubmit}
+      >
         <InputTextField type="text" placeholder="Usuário" />
         <InputTextField type="password" placeholder="Senha" />
 

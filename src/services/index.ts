@@ -16,7 +16,18 @@ export const getComics = () => {
 };
 
 export const login = () => {
+  window.localStorage.setItem(
+    'marvel-frontend-user',
+    JSON.stringify({
+      imageUrl: `${process.env.PUBLIC_URL}/images/imagem-perfil.jpg`,
+    })
+  );
   return Promise.resolve<User>({
     imageUrl: `${process.env.PUBLIC_URL}/images/imagem-perfil.jpg`,
   });
+};
+
+export const logout = () => {
+  window.localStorage.removeItem('marvel-frontend-user');
+  return Promise.resolve();
 };

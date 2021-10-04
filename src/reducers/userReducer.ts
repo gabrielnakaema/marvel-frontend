@@ -1,6 +1,16 @@
 import { User, UserActions } from '../types';
 
-export const userReducer = (state = {} as User | null, action: UserActions) => {
+const getUserInfoFromLocalStorage = (): User | null => {
+  const userInfo = localStorage.getItem('marvel-frontend-user');
+  if (userInfo) {
+    return JSON.parse(userInfo);
+  }
+  return null;
+};
+
+const initialState: User | null = getUserInfoFromLocalStorage();
+
+export const userReducer = (state = initialState, action: UserActions) => {
   switch (action.type) {
     case 'user/setUser':
       return action.payload;
