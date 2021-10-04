@@ -6,7 +6,7 @@ export const MoviesPageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 10%;
+  margin-left: 5%;
   &:after {
     content: '';
     position: absolute;
@@ -22,18 +22,6 @@ export const MoviesPageContainer = styled.div`
     );
   }
   .swiper-container {
-    width: 90%;
-
-    @media (min-width: 500) {
-      width: 80%;
-    }
-
-    @media (min-width: 600px) {
-      width: 70%;
-    }
-
-    @media (min-width: 880px) {
-      width: 95%;
-    }
+    width: 95%;
   }
 `;

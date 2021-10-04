@@ -18,7 +18,7 @@ export const HeaderContainer = styled.header`
 
 export const NavBar = styled.nav`
   height: 100%;
-  width: 60%;
+  width: 50%;
   margin-left: auto;
   display: flex;
   align-items: center;
