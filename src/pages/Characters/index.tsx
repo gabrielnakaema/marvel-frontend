@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import StarRatingComponent from 'react-star-rating-component';
 import { Card } from '../../components/Card';
 import { Details } from '../../components/Details';
 import { HorizontalList } from '../../components/HorizontalList';
@@ -10,6 +11,7 @@ import {
   CharacterDetailsName,
   CharacterDetailsAppearances,
   CharacterPageContainer,
+  Subtitle,
 } from './styles';
 
 export const CharactersPage = () => {
@@ -57,11 +59,20 @@ export const CharacterDetails = (props: { character: Character }) => {
   return (
     <>
       <CharacterDetailsName>{props.character.name}</CharacterDetailsName>
+      <Subtitle>Aparições: </Subtitle>
       <CharacterDetailsAppearances>
-        {props.character.appearances.map((app) => (
-          <p key={app}>{app}</p>
+        {props.character.appearances.map((ap) => (
+          <p key={ap}>{ap}</p>
         ))}
       </CharacterDetailsAppearances>
+      <Subtitle>Avaliações dos Fãs</Subtitle>
+      <div style={{ height: '40px' }}>
+        <StarRatingComponent
+          name="Avaliações dos Fãs"
+          value={props.character.fanRating}
+          starCount={5}
+        />
+      </div>
     </>
   );
 };

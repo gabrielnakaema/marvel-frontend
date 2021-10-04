@@ -27,15 +27,23 @@ export const CharacterPageContainer = styled.div`
   }
 `;
 
-export const CharacterDetailsName = styled.h1`
+export const CharacterDetailsName = styled.h2`
   color: white;
   font-family: 'Axiforma';
   font-weight: bold;
   font-size: 2.5rem;
+  margin: 1rem 0;
 `;
 
 export const CharacterDetailsAppearances = styled.div`
   color: white;
   font-family: 'Axiforma';
+  font-weight: 100;
+`;
+
+export const Subtitle = styled.h3`
+  font-family: 'Axiforma';
   font-weight: bold;
+  color: white;
+  margin: 1rem 0;
 `;
