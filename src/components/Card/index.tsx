@@ -10,6 +10,7 @@ interface CardProps {
   title: string;
   description: string;
   imageUrl?: string;
+  onClickDetails: () => void;
 }
 
 export const Card = (props: CardProps) => {
@@ -18,7 +19,7 @@ export const Card = (props: CardProps) => {
       <CardInformationContainer>
         <CardTitle>{props.title}</CardTitle>
         <CardDescription>{props.description}</CardDescription>
-        <CardButton>ver detalhes</CardButton>
+        <CardButton onClick={props.onClickDetails}>ver detalhes</CardButton>
       </CardInformationContainer>
     </CardContainer>
   );

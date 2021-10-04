@@ -20,12 +20,15 @@ export const ComicsPage = () => {
 
   const comicsElement =
     comics &&
-    comics.map((comic) => (
+    comics.map((comic, index) => (
       <Card
         key={comic.id}
         title={comic.title}
         description={comic.description}
         imageUrl={comic.imageUrl}
+        onClickDetails={() => {
+          return;
+        }}
       />
     ));
 

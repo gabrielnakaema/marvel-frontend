@@ -26,6 +26,9 @@ export const MoviesPage = () => {
         title={movie.title}
         description={movie.description}
         imageUrl={movie.imageUrl}
+        onClickDetails={() => {
+          return;
+        }}
       />
     ));
 

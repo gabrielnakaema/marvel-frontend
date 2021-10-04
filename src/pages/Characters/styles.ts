@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 export const CharacterPageContainer = styled.div`
+  position: relative;
   margin: auto;
   height: 100%;
   overflow-x: hidden;
@@ -24,4 +25,17 @@ export const CharacterPageContainer = styled.div`
   .swiper-container {
     width: 95%;
   }
+`;
+
+export const CharacterDetailsName = styled.h1`
+  color: white;
+  font-family: 'Axiforma';
+  font-weight: bold;
+  font-size: 2.5rem;
+`;
+
+export const CharacterDetailsAppearances = styled.div`
+  color: white;
+  font-family: 'Axiforma';
+  font-weight: bold;
 `;
