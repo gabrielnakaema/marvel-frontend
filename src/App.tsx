@@ -75,10 +75,6 @@ const Background = (props: { children: React.ReactNode }) => {
           position: 'absolute',
           width: '100%',
           height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
         }}
       >
         {props.children}
